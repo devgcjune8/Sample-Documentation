@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200&display=swap');
+
+html,
+body {
+  font-family: Titillium Web, sans-serif;
+  font-weight: 1000;
+  min-width: 250px;
+  background-color: #fcf0f0; 
+  line-height: 2;
+}
+
+#navbar {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  width: 250px;
+  height: 100%;
+  border: 2px solid black;
+  background-color: #ffc4c4;
+}
+#navbar ul {
+  list-style: none;
+  padding: 0;
+  overflow-y: auto;
+  height: 60%;
+  overflow-x: hidden;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+}
+#navbar li {
+  position: relative;
+  border-top: 2px solid gray;
+}
+#navbar li a:hover {
+  color: #ad0000;
+}
+#reference {
+  border-bottom: 2px solid gray;
+}
+#navbar header {
+  padding: 22px;
+  display: block;
+  font-size: 1.5rem;
+  text-align: left;
+  font-weight: 1800; 
+}
+#navbar a {
+  text-decoration: none;
+  color: black;
+  display: block;
+  padding: 15px;
+}
+
+#main-doc {
+  margin-left: 270px;
+  margin-right: auto;
+  margin-top: 50px;
+}
+.main-section header {
+  font-size: 1.5rem;
+}
+.main-section p {
+  margin-left: 20px;
+}
+
+.main-section a {
+  text-decoration: none;
+  color: #d40000;
+}
+#Mailing_List code, #How_to_get_Ruby code {
+  font-family: Space Mono, monospace; 
+  font-weight: 100;
+  background-color: #c40000;
+  color: white;
+  padding: 0em, 0.5em;
+  display: block;
+  word-wrap: normal;
+  word-break: normal;
+}
+#How_to_compile_and_install code {
+  font-family: Space Mono, monospace; 
+  font-weight: 100;
+  background-color: #c40000;
+  color: white;
+  padding: 0em, 0.5em;
+  display: inline;
+  word-wrap: normal;
+  word-break: normal;
+}
+#compilenotes {
+  list-style: none;
+}
+
+
+@media only screen and (max-width: 815px) {
+  /* For mobile phones: */
+  #navbar ul {
+    border: 2px solid black;
+    height: 142px;
+  }
+  #navbar {
+    background-color: #ffc4c4;
+    position: absolute;
+    top: 0;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    max-height: 250px;
+    border: none;
+    z-index: 1;
+    border-bottom: 2px solid;
+  }
+  #main-doc {
+    position: relative;
+    margin-left: 0px;
+    margin-top: 70px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  #main-doc {
+    margin-left: -10px;
+  }
+  #navbar{
+    width: 100%;
+  }
+  #navbar ul{
+    height: 90px;
+  }
+  code {
+    margin-left: -2px;
+    margin-right: -2px;
+    width: 100%;
+    padding: 15px;
+    min-width: 233px;
+  }
+}

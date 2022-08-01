@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Ruby  master Documentation </title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
+<!-- 
+
+Hello Camper!
+
+For now, the test suite only works in Chrome! Please read the README below in the JS Editor before beginning. Feel free to delete this message once you have read it. Good luck and Happy Coding! 
+
+- The freeCodeCamp Team 
+
+-->
+<nav id="navbar">
+  <header id="title">Ruby Language Master Documentation</header>
+ <ul>
+   <li><a class="nav-link" href="#What's_Ruby">What's Ruby</a> </li>
+   <li><a class="nav-link" href="#Features_of_Ruby">Features of Ruby</a></li>
+   <li><a class="nav-link" href="#How_to_get_Ruby">How to get Ruby</a></li>
+   <li><a class="nav-link" href="#Homepage">Homepage</a></li>
+   <li><a class="nav-link" href="#Mailing_List">Mailing List</a></li>
+   <li><a class="nav-link" href="#How_to_compile_and_install">How to compile and install</a></li>
+   <li><a class="nav-link" href="#Copying">Copying</a></li>
+   <li><a class="nav-link" href="#Feedback">Feedback</a></li>
+   <li><a class="nav-link" href="#Contributing">Contributing</a></li>
+   <li id="author"><a class="nav-link" href="#The_Author">The Author</a></li>
+   <li id="reference"><a class="nav-link" href="#Reference">Reference</a></li>
+  </ul>
+</nav>
+
+<main id="main-doc">
+  <section class="main-section" id="What's_Ruby"><header>What's Ruby  </header>
+    <p>Ruby is an interpreted object-oriented programming language often used for web development. It also offers many scripting features to process plain text and serialized files, or manage system tasks. It is simple, straightforward, and extensible.</p>
+  </section>
+  <section class="main-section" id="Features_of_Ruby"><header>Features of Ruby</header>
+    <ul>
+      <li>Simple Syntax</li>
+      <li><b>Normal Object</b>-oriented Features <i>(e.g. class, method calls)</i></li>
+      <li><b>Advanced Object</b>-oriented Features<i>(e.g. mix-in, singleton-method)</i></li>
+      <li>Operator Overloading</li>
+      <li><a href="https://docs.ruby-lang.org/en/master/Exception.html">Exception Handling</a></li>
+<li>Iterators and Closures
+</li>
+<li>Garbage Collection</li>
+      <li>Dynamic Loading of <a href="https://docs.ruby-lang.org/en/master/Object.html">Object</a> Files (on some architectures)</li>
+<li>Highly Portable (works on many Unix-like/POSIX compatible platforms as well as Windows, macOS, etc.) cf. <a href=http://github.com/ruby/ruby/blob/master/doc/contributing.rdoc#label-Platform+Maintainers>github.com/ruby/ruby/blob/master/doc/contributing.rdoc#label-Platform+Maintainers</a></li>
+  </section>
+  <section class="main-section" id="How_to_get_Ruby"><header>How to get Ruby</header>
+    <p>For a complete list of ways to install Ruby, including using third-party tools like rvm, see:</p>
+
+    <p><a href="https://www.ruby-lang.org/en/downloads/">www.ruby-lang.org/en/downloads/</a></p>
+
+<h3>Git</h3>
+    <p>The mirror of the Ruby source tree can be checked out with the following command:</p>
+
+    <p class="codes"><code>$ git clone https://github.com/ruby/ruby.git</code></p>
+<p>There are some other branches under development. Try the following command to see the list of branches:</p>
+
+    <p class="codes"><code>$ git ls-remote https://github.com/ruby/ruby.git</code></p>
+<p>You may also want to use git.ruby-lang.org/ruby.git (actual master of Ruby source) if you are a committer.</p>
+
+    <h3>Subversion</h3>
+    <p>Stable branches for older Ruby versions can be checked out with also the following command:</p>
+
+    <p class="codes"><code>$ svn co https://svn.ruby-lang.org/repos/ruby/branches/ruby_2_6/ ruby</code></p>
+    <p>Try the following command to see the list of branches:</p>
+
+    <p class="codes"><code>$ svn ls https://svn.ruby-lang.org/repos/ruby/branches/</code>
+    </section>
+  <section class="main-section" id="Homepage"><header>Homepage</header><p><a href="https://www.ruby-lang.org/">www.ruby-lang.org/</a></p></section>
+  <section class="main-section" id="Mailing_List"><header>Mailing List</header>
+    <p>There is a mailing list to discuss Ruby. To subscribe to this list, please send the following phrase:</p>
+      <p><code>subscribe</code></p>
+    <p>in the mail body (not subject) to the address <a href="mailto:ruby-talk-request@ruby-lang.org?subject=Join%20Ruby%20Mailing%20List&body=subscribe">ruby-talk-request@ruby-lang.org</a>.</p>
+  </section>
+  <section class="main-section" id="How_to_compile_and_install"><header>How to compile and install</header>
+    <ol><li>If you want to use Microsoft Visual C++ to compile Ruby, read <a href="https://docs.ruby-lang.org/en/master/win32/README.win32">win32/README.win32</a> instead of this document.</li>
+
+      <li>Run <code>./autogen.sh</code> to generate configure, when you build the source checked out from the Git repository.</Li>
+
+      <li>Run <code>./configure</code>, which will generate <code>config.h</code> and <code>Makefile</code>.</li>
+
+<p>Some C compiler flags may be added by default depending on your environment. Specify <code>optflags=..</code> and <code>warnflags=..</code> as necessary to override them.</p>
+
+      <li>Edit <code>include/ruby/defines.h</code> if you need. Usually this step will not be needed.</li>
+
+      <li>Optional: Remove comment mark ( <code>#</code> ) before the module names from <code>ext/Setup</code>.</li>
+
+      <p>This step is only necessary if you want to link modules statically.</p>
+
+<p>If you don't want to compile dynamic extensions (probably on architectures which do not allow dynamic loading), remove comment mark from the line "<code>#option nodynamic</code>" in <code>ext/Setup</code>.</p>
+
+      <p>Usually this step will not be needed.</p>
+
+      <li>Run <code>make</code>.</li>
+
+<ul><li>On Mac, set RUBY_CODESIGN environment variable with a signing identity. It uses the identity to sign <code>ruby</code> binary. See also codesign(1).</li></ul>
+
+      <li>Optionally, run '<code>make check</code>' to check whether the compiled Ruby interpreter works well. If you see the message "<code>check succeeded</code>", your Ruby works as it should (hopefully).</li>
+
+    <li>Run '<code>make install</code>'.</li>
+
+    <p>This command will create the following directories and install files into them.</p></li>
+  </ol>
+    <ul>
+  <li><code>${DESTDIR}${prefix}/bin</code></li>
+
+      <li><code>${DESTDIR}${prefix}/include/ruby-${MAJOR}.${MINOR}.${TEENY}</code></li>
+
+    <li><code>${DESTDIR}${prefix}/include/ruby-${MAJOR}.${MINOR}.${TEENY}/${PLATFORM}</code></li>
+
+  <li><code>${DESTDIR}${prefix}/lib</code></li>
+
+   <li><code>${DESTDIR}${prefix}/lib/ruby</code></li>
+
+  <li><code>${DESTDIR}${prefix}/lib/ruby/${MAJOR}.${MINOR}.${TEENY}</code></li>
+
+<li><code>${DESTDIR}${prefix}/lib/ruby/${MAJOR}.${MINOR}.${TEENY}/${PLATFORM}</code></li>
+
+  <li><code>${DESTDIR}${prefix}/lib/ruby/site_ruby</code></li>
+
+  <li><code>${DESTDIR}${prefix}/lib/ruby/site_ruby/${MAJOR}.${MINOR}.${TEENY}</code></li>
+
+<li><code>${DESTDIR}${prefix}/lib/ruby/site_ruby/${MAJOR}.${MINOR}.${TEENY}/${PLATFORM}</code></li>
+
+<li><code>${DESTDIR}${prefix}/lib/ruby/vendor_ruby</code></li>
+
+<li><code>${DESTDIR}${prefix}/lib/ruby/vendor_ruby/${MAJOR}.${MINOR}.${TEENY}</code></li>
+
+  <li><code>${DESTDIR}${prefix}/lib/ruby/vendor_ruby/${MAJOR}.${MINOR}.${TEENY}/${PLATFORM}</code></li>
+
+  <li><code>${DESTDIR}${prefix}/lib/ruby/gems/${MAJOR}.${MINOR}.${TEENY}</code></li>
+
+  <li><code>${DESTDIR}${prefix}/share/man/man1</code></li>
+
+      <li><code>${DESTDIR}${prefix}/share/ri/${MAJOR}.${MINOR}.${TEENY}/system</code></li>
+<ul id="compilenotes">
+  <li>If Ruby's API version is 'x.y.z', the <code>${MAJOR}</code> is 'x', the <code>${MINOR}</code> is 'y', and the <code>${TEENY}</code> is 'z'.</li>
+
+      <li>NOTE: teeny of the API version may be different from one of Ruby's program version</li>
+
+    <li>You may have to be a super user to install Ruby.</li>
+    </ul>
+<p>If you fail to compile Ruby, please send the detailed error report with the error log and machine/OS type, to help others.</p>
+
+<p>Some extension libraries may not get compiled because of lack of necessary external libraries and/or headers, then you will need to run 'make distclean-ext' to remove old configuration after installing them in such case.</p>      
+    </section>
+  <section class="main-section" id="Copying"><header>Copying</header><p>See the file <a href="https://docs.ruby-lang.org/en/master/COPYING">COPYING</a></section>
+  <section class="main-section" id="Feedback"><header>Feedback</header>
+    <p>
+      Questions about the Ruby language can be asked on the Ruby-Talk mailing list (<a href="https://www.ruby-lang.org/en/community/mailing-lists">www.ruby-lang.org/en/community/mailing-lists</a>) or on websites like (<a href="https://stackoverflow">stackoverflow.com</a>).</p>
+
+    <p>Bugs should be reported at <a href="https://bugs.ruby-lang.org/">bugs.ruby-lang.org</a>. Read <a href="https://bugs.ruby-lang.org/projects/ruby/wiki/HowToReport">HowToReport</a> for more information.</p>
+    </section>
+  <section class="main-section" id="Contributing"><header>Contributing</header>
+    <p>See the file <a href="https://docs.ruby-lang.org/en/master/CONTRIBUTING.md">CONTRIBUTING.md</a></p></section>
+  <section class="main-section" id="The_Author"><header>The Author</header>
+  <p>Ruby was originally designed and developed by Yukihiro Matsumoto (<a href="https://matz.rubyist.net/">Matz</a>) in 1995.</p>
+    <p><a href="mailto:matz@ruby-lang.org">matz@ruby-lang.org</a></p></section>
+  <section class="main-section" id="Reference"><header>Reference</header><p>This documentation is a duplicate taken from <a href="https://docs.ruby-lang.org/en/master/">docs.ruby-lang.org/en/master/</a>.</p>
+    
+  </section>
+</main>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
